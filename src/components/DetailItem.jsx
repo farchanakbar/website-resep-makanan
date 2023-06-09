@@ -43,8 +43,8 @@ function DetailItem() {
   const instructions = pembuatan?.filter(instruction => instruction.length > 1);
   
   return (
-    <div className='w-full'>
-      <div className='w-[500px] text-black  flex items-center gap-2 p-3 rounded-md'>
+    <div>
+      <div className=' text-black  flex items-center gap-2 p-3 rounded-md'>
         <Link to={'/'}><AiFillHome size={25} /></Link>
         <MdKeyboardDoubleArrowRight size={25} />
         <h3>{data.strMeal}</h3>

@@ -3,6 +3,7 @@ import DetailItem from '../components/DetailItem';
 import Categories from '../components/Categories';
 import Layout from '../Ui/Layout';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function DetailPage() {
   return (
@@ -12,6 +13,7 @@ function DetailPage() {
         <DetailItem />
         <Categories />
       </Layout>
+      <Footer />
     </div>
   )
 }

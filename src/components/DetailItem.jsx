@@ -51,12 +51,12 @@ function DetailItem() {
       </div>
       <h1 className='text-3xl font-semibold text-white underline decoration-yellow-500'>Detail Resep {data.strMeal}</h1>
       <div className='mt-10 w-full bg-[#967E76] border shadow-lg rounded-sm p-4'>
-        <div className='md:flex md:gap-6 md:justify-start border rounded-lg'>
-          <img className='' src={data.strMealThumb} alt={data.strMeal} />
+        <div className='md:flex md:gap-6 md:justify-start rounded-lg'>
+          <img className='rounded border' src={data.strMealThumb} alt={data.strMeal} />
           <div className='flex flex-col gap-2 p-3 text-lg font-semibold'>
             <h1>Nama Makanan: {data.strMeal}</h1>
             <h1>Category: <span>{data.strCategory}</span></h1>
-            <a href={data.strYoutube} className=' hover:text-white'>{data.strYoutube}</a>
+            <a href={data.strYoutube}>Cara Pembuatan: <h3 className='hover:text-red-300'>{data.strYoutube}</h3></a>
             <h1 className='text-xl font-semibold mt-5'>Bahan Bahan:</h1>
             <ul className='w-full p-3'>
               {

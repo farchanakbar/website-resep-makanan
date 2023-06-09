@@ -2,10 +2,10 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
-    backgroundImage: {
-      header: "url('./src/assets/hero.png')",
-      makanan: "url('./src/assets/bg-makanan.png')",
+    extend: {
+      backgroundImage: {
+        hero: "url('./src/assets/hero.png')",
+      },
     },
   },
   plugins: [],

@@ -11,9 +11,7 @@ function HomePage() {
 
   return (
     <div>
-      <div className="bg-heropattern bg-cover">
-        <SearchBar data={setData}/>
-      </div>
+      <SearchBar data={setData}/>
       <Layout>
         <ListItem data={data}/>
         <Categories />

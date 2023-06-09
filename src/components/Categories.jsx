@@ -27,10 +27,10 @@ function Categories() {
 
   return (
     <div className='mt-[100px]'>
-      <h1 className='text-3xl font-semibold text underline decoration-yellow-500'>Kategori</h1>
-      {data && <ul className='mt-5 flex flex-wrap justify-center gap-3'>
+      <h1 className='text-3xl font-semibold text-white underline decoration-yellow-500'>Kategori</h1>
+      {data && <ul className='mt-5 flex flex-wrap justify-center gap-3  p-3 rounded-lg'>
         {data.map((item) => (
-          <li className='w-[250px] md:max-w-lg border-2 rounded-md cursor-pointer p-3 relative overflow-hidden' key={item.idCategory}>
+          <li className='w-[250px] md:max-w-lg border-2 rounded-md bg-[#967E76] cursor-pointer p-3 relative overflow-hidden' key={item.idCategory}>
           <Link to={`/category/${item.strCategory}`}>
             <img onClick={handleClick} className='hover:scale-105 cursor-pointer transition duration-300' src={item.strCategoryThumb} alt={item.strCategory} />
           </Link>

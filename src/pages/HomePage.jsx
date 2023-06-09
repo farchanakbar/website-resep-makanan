@@ -3,6 +3,7 @@ import ListItem from '../components/ListItem'
 import Categories from '../components/Categories'
 import SearchBar from '../components/SearchBar'
 import Layout from '../Ui/Layout'
+import Header from '../components/Header'
 
 function HomePage() {
 
@@ -10,7 +11,9 @@ function HomePage() {
 
   return (
     <div>
-      <SearchBar data={setData}/>
+      <div className='bg-header bg-cover'>
+        <SearchBar data={setData}/>
+      </div>
       <Layout>
         <ListItem data={data}/>
         <Categories />

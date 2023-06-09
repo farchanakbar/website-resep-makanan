@@ -5,6 +5,7 @@ export default {
     extend: {},
     backgroundImage: {
       header: "url('./src/assets/hero.png')",
+      makanan: "url('./src/assets/bg-makanan.png')",
     },
   },
   plugins: [],

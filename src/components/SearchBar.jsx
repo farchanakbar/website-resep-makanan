@@ -9,7 +9,9 @@ function SearchBar({data}) {
     const searchMeal = async () => {
       try {
         const response = await axios.get(`/search.php?s=${input}`);
-        data(response.data.meals);
+        const result = response.data.meals;
+        data(result);
+        
       } catch (error) {
         console.log(error);
       }
@@ -20,12 +22,13 @@ function SearchBar({data}) {
 
   const onChange = (event) => {
     event.preventDefault();
-    setInput(event.target.value)
+    // const value = event.target.value.toLowerCase().split(' ');
+    setInput(event.target.value);
   }
 
   return (
-    <div className='w-full gap-y-5 shadow-2xl flex flex-col items-center justify-center bg- bg-green-400 h-[500px]'>
-      <h1 className='text-6xl font-bold text-center text-slate-200 drop-shadow-xl'>Cari Resepmu Disini</h1>
+    <div className='w-full gap-y-5 shadow-2xl flex flex-col items-center justify-center h-[500px]'>
+      <h1 className='text-6xl font-bold text-center text-slate-200'>Cari Resepmu Disini</h1>
       <span className='flex items-center gap-3 w-[300px] md:w-[500px] h-11 px-3 rounded-lg shadow-xl border border-slate-300 bg-slate-200'>
         <input type="text" value={input} onChange={onChange} className='w-full h-full border-none outline-none bg-transparent' placeholder='cari resepmu disini' />
         <GoSearch size={25} className='text-slate-400' />

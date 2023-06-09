@@ -8,7 +8,7 @@ import Categories from '../components/Categories';
 function CategoryPage() {
   return (
     <Layout>
-      <Link to={'/'}><button className='px-5 py-2 bg-red-500 rounded-lg'>Back to Homepage</button></Link>
+      <Link to={'/'}><button className='px-4 py-3 text-white hover:bg-blue-700 bg-blue-400 rounded-md mt-5'>Back to Homepage</button></Link>
       <CategoryItem />
       <Categories />
     </Layout>

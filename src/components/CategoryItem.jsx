@@ -27,10 +27,10 @@ function CategoryItem() {
 
   return (
     <div className='mt-5'>
-      <h1 className='text-3xl font-semibold uppercase'>Category {id}</h1>
+      <h1 className='text-3xl font-semibold text-white underline decoration-yellow-500'>Kategori {id}</h1>
       {data && <ul className='mt-5 flex flex-wrap justify-center gap-3'>
         {data.slice(0, displayCount).map((item) => (
-          <li className='w-[500px] md:max-w-sm border-2 rounded-md p-3 relative bg-slate-200 overflow-hidden' key={item.strMeal}>
+          <li className='w-[500px] md:max-w-sm border-2 rounded-md p-3 relative bg-[#967E76] overflow-hidden' key={item.strMeal}>
           <Link to={`/meal/${item.idMeal}`}><img className='hover:scale-105 rounded-md transition duration-300' src={item.strMealThumb} alt={item.strMeal} /></Link>
           <p className='font-semibold text-xl mt-4'>{item.strMeal}</p>
           </li>

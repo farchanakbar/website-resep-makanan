@@ -50,20 +50,24 @@ function DetailItem() {
         <h3>{data.strMeal}</h3>
       </div>
       <h1 className='text-3xl font-semibold text-white underline decoration-yellow-500'>Detail Resep {data.strMeal}</h1>
-      <div className='mt-10 w-full bg-[#967E76] border shadow-lg rounded-sm p-4'>
-        <div className='md:flex md:gap-6 md:justify-start rounded-lg'>
-          <img className='rounded border' src={data.strMealThumb} alt={data.strMeal} />
-          <div className='flex flex-col gap-2 p-3 text-lg font-semibold'>
-            <h1>Nama Makanan: {data.strMeal}</h1>
-            <h1>Category: <span>{data.strCategory}</span></h1>
-            <a href={data.strYoutube}>Cara Pembuatan: <h3 className='hover:text-red-300'>{data.strYoutube}</h3></a>
+      <div className='mt-10 w-full-sm p-2'>
+        <div className='flex flex-col gap-3'>
+          <div className='grid grid-cols-1 md:grid-cols-2 border-2 bg-[#967E76]'>
+            <img className='border shadow-md' src={data.strMealThumb} alt={data.strMeal} />
+            <div className='text-lg font-bold px-3 flex flex-col mx-auto justify-center gap-3 mt-3'>
+              <h1 className='uppercase lg:text-4xl'>Nama Makanan: {data.strMeal}</h1>
+              <h1 className='uppercase lg:text-4xl'>Category: <span>{data.strCategory}</span></h1>
+              <a className='lg:text-4xl' href={data.strYoutube}>Cara Pembuatan: <h3 className='lg:text-2xl hover:text-red-300'>{data.strYoutube}</h3></a>
+            </div>
+          </div>
+          <div>
             <h1 className='text-xl font-semibold mt-5'>Bahan Bahan:</h1>
-            <ul className='w-full p-3'>
+            <ul className='max-w-[800px] mt-2 flex bg-red-200 rounded-md justify-start items-center gap-3 flex-wrap p-3'>
               {
                 measures?.map((resep, id) => (
-                  <li key = {id} className = "flex items-center gap-4">
-                      <MdOutlineFoodBank size={25} />
-                    {resep}
+                  <li key = {id} className='flex items-center gap-3 w-[150px]'>
+                    <MdOutlineFoodBank size={30} />
+                    <span>{resep}</span>
                   </li>
                 ))
               }

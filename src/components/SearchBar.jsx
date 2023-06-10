@@ -3,7 +3,8 @@ import axios from '../api/axios';
 import {GoSearch} from 'react-icons/go';
 
 function SearchBar({data}) {
-  const [input, setInput] = useState([]);
+  const [input, setInput] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     const searchMeal = async () => {
@@ -22,8 +23,8 @@ function SearchBar({data}) {
 
   const onChange = (event) => {
     event.preventDefault();
-    // const value = event.target.value.toLowerCase().split(' ');
-    setInput(event.target.value);
+    const value = event.target.value.toLowerCase();
+    setInput(value)
   }
 
   return (

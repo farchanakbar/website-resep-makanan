@@ -6,17 +6,14 @@ function Categories() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const searchCategory = async () => {
-      try {
-        const response = await axios.get(`/categories.php`);
+    axios.get('/categories.php')
+      .then(response => {
         setData(response.data.categories);
-      } catch (error) {
+      })
+      .catch(error => {
         console.log(error);
-      }
-    }
-    
-    searchCategory();
-  }, [data])
+      });
+  }, []);
 
   const handleClick = () => {
     window.scrollTo({
@@ -28,7 +25,7 @@ function Categories() {
   return (
     <div className='mt-[100px]'>
       <h1 className='text-3xl font-semibold text-white underline decoration-yellow-500'>Kategori</h1>
-      {data && <ul className='mt-5 flex flex-wrap justify-center gap-3  p-3 rounded-lg'>
+      {data.length > 0 && <ul className='mt-5 flex flex-wrap justify-center gap-3  p-3 rounded-lg'>
         {data.map((item) => (
           <li className='w-[250px] md:max-w-lg border-2 rounded-md bg-[#967E76] cursor-pointer p-3 relative overflow-hidden' key={item.idCategory}>
           <Link to={`/category/${item.strCategory}`}>

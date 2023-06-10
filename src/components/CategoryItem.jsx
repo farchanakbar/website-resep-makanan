@@ -8,18 +8,14 @@ function CategoryItem() {
   const {id} = useParams()
 
   useEffect(() => {
-    const searchCategory = async () => {
-      try {
-        const response = await axios.get(`/filter.php?c=${id}`);
-        const result = (response.data.meals);
-        setData(result);
-      } catch (error) {
+    axios.get(`/filter.php?c=beef`)
+      .then(response => {
+        setData(response.data.meals);
+      })
+      .catch(error => {
         console.log(error);
-      }
-    }
-    
-    searchCategory();
-  }, [data, displayCount])
+      });
+  }, [displayCount]);
 
   const handleClick = () => {
     setDisplayCount(displayCount + 8);
